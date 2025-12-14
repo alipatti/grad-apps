@@ -10,6 +10,7 @@
 
 \DeclareBoolOption[true]{header}
 \DeclareBoolOption[false]{berkeley}
+\DeclareBoolOption[false]{mit}
 
 \ProcessKeyvalOptions*
 
@@ -53,6 +54,14 @@
 	\titleformat{\section}[runin]{\bfseries}{\thesection}{1em}{}[.]
 	\linespread{2}
 	\geometry{margin=.8in}
+	\AtBeginBibliography{
+		\linespread{1}
+		\footnotesize
+	}
+\fi
+
+\ifoption@mit
+	\setstretch{1}
 	\AtBeginBibliography{
 		\linespread{1}
 		\footnotesize
